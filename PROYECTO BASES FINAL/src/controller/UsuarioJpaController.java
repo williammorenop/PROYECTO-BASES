@@ -13,10 +13,10 @@ import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import entities.Miembro;
 import entities.Usuario;
 import java.util.ArrayList;
 import java.util.List;
-import entities.Miembro;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
@@ -36,12 +36,6 @@ public class UsuarioJpaController implements Serializable {
     }
 
     public void create(Usuario usuario) throws PreexistingEntityException, Exception {
-        if (usuario.getUsuarioList() == null) {
-            usuario.setUsuarioList(new ArrayList<Usuario>());
-        }
-        if (usuario.getUsuarioList1() == null) {
-            usuario.setUsuarioList1(new ArrayList<Usuario>());
-        }
         if (usuario.getMiembroList() == null) {
             usuario.setMiembroList(new ArrayList<Miembro>());
         }
@@ -49,18 +43,6 @@ public class UsuarioJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            List<Usuario> attachedUsuarioList = new ArrayList<Usuario>();
-            for (Usuario usuarioListUsuarioToAttach : usuario.getUsuarioList()) {
-                usuarioListUsuarioToAttach = em.getReference(usuarioListUsuarioToAttach.getClass(), usuarioListUsuarioToAttach.getNickName());
-                attachedUsuarioList.add(usuarioListUsuarioToAttach);
-            }
-            usuario.setUsuarioList(attachedUsuarioList);
-            List<Usuario> attachedUsuarioList1 = new ArrayList<Usuario>();
-            for (Usuario usuarioList1UsuarioToAttach : usuario.getUsuarioList1()) {
-                usuarioList1UsuarioToAttach = em.getReference(usuarioList1UsuarioToAttach.getClass(), usuarioList1UsuarioToAttach.getNickName());
-                attachedUsuarioList1.add(usuarioList1UsuarioToAttach);
-            }
-            usuario.setUsuarioList1(attachedUsuarioList1);
             List<Miembro> attachedMiembroList = new ArrayList<Miembro>();
             for (Miembro miembroListMiembroToAttach : usuario.getMiembroList()) {
                 miembroListMiembroToAttach = em.getReference(miembroListMiembroToAttach.getClass(), miembroListMiembroToAttach.getMiembroId());
@@ -68,14 +50,6 @@ public class UsuarioJpaController implements Serializable {
             }
             usuario.setMiembroList(attachedMiembroList);
             em.persist(usuario);
-            for (Usuario usuarioListUsuario : usuario.getUsuarioList()) {
-                usuarioListUsuario.getUsuarioList().add(usuario);
-                usuarioListUsuario = em.merge(usuarioListUsuario);
-            }
-            for (Usuario usuarioList1Usuario : usuario.getUsuarioList1()) {
-                usuarioList1Usuario.getUsuarioList().add(usuario);
-                usuarioList1Usuario = em.merge(usuarioList1Usuario);
-            }
             for (Miembro miembroListMiembro : usuario.getMiembroList()) {
                 Usuario oldUsuarioNickNameOfMiembroListMiembro = miembroListMiembro.getUsuarioNickName();
                 miembroListMiembro.setUsuarioNickName(usuario);
@@ -104,10 +78,6 @@ public class UsuarioJpaController implements Serializable {
             em = getEntityManager();
             em.getTransaction().begin();
             Usuario persistentUsuario = em.find(Usuario.class, usuario.getNickName());
-            List<Usuario> usuarioListOld = persistentUsuario.getUsuarioList();
-            List<Usuario> usuarioListNew = usuario.getUsuarioList();
-            List<Usuario> usuarioList1Old = persistentUsuario.getUsuarioList1();
-            List<Usuario> usuarioList1New = usuario.getUsuarioList1();
             List<Miembro> miembroListOld = persistentUsuario.getMiembroList();
             List<Miembro> miembroListNew = usuario.getMiembroList();
             List<String> illegalOrphanMessages = null;
@@ -122,20 +92,6 @@ public class UsuarioJpaController implements Serializable {
             if (illegalOrphanMessages != null) {
                 throw new IllegalOrphanException(illegalOrphanMessages);
             }
-            List<Usuario> attachedUsuarioListNew = new ArrayList<Usuario>();
-            for (Usuario usuarioListNewUsuarioToAttach : usuarioListNew) {
-                usuarioListNewUsuarioToAttach = em.getReference(usuarioListNewUsuarioToAttach.getClass(), usuarioListNewUsuarioToAttach.getNickName());
-                attachedUsuarioListNew.add(usuarioListNewUsuarioToAttach);
-            }
-            usuarioListNew = attachedUsuarioListNew;
-            usuario.setUsuarioList(usuarioListNew);
-            List<Usuario> attachedUsuarioList1New = new ArrayList<Usuario>();
-            for (Usuario usuarioList1NewUsuarioToAttach : usuarioList1New) {
-                usuarioList1NewUsuarioToAttach = em.getReference(usuarioList1NewUsuarioToAttach.getClass(), usuarioList1NewUsuarioToAttach.getNickName());
-                attachedUsuarioList1New.add(usuarioList1NewUsuarioToAttach);
-            }
-            usuarioList1New = attachedUsuarioList1New;
-            usuario.setUsuarioList1(usuarioList1New);
             List<Miembro> attachedMiembroListNew = new ArrayList<Miembro>();
             for (Miembro miembroListNewMiembroToAttach : miembroListNew) {
                 miembroListNewMiembroToAttach = em.getReference(miembroListNewMiembroToAttach.getClass(), miembroListNewMiembroToAttach.getMiembroId());
@@ -144,30 +100,6 @@ public class UsuarioJpaController implements Serializable {
             miembroListNew = attachedMiembroListNew;
             usuario.setMiembroList(miembroListNew);
             usuario = em.merge(usuario);
-            for (Usuario usuarioListOldUsuario : usuarioListOld) {
-                if (!usuarioListNew.contains(usuarioListOldUsuario)) {
-                    usuarioListOldUsuario.getUsuarioList().remove(usuario);
-                    usuarioListOldUsuario = em.merge(usuarioListOldUsuario);
-                }
-            }
-            for (Usuario usuarioListNewUsuario : usuarioListNew) {
-                if (!usuarioListOld.contains(usuarioListNewUsuario)) {
-                    usuarioListNewUsuario.getUsuarioList().add(usuario);
-                    usuarioListNewUsuario = em.merge(usuarioListNewUsuario);
-                }
-            }
-            for (Usuario usuarioList1OldUsuario : usuarioList1Old) {
-                if (!usuarioList1New.contains(usuarioList1OldUsuario)) {
-                    usuarioList1OldUsuario.getUsuarioList().remove(usuario);
-                    usuarioList1OldUsuario = em.merge(usuarioList1OldUsuario);
-                }
-            }
-            for (Usuario usuarioList1NewUsuario : usuarioList1New) {
-                if (!usuarioList1Old.contains(usuarioList1NewUsuario)) {
-                    usuarioList1NewUsuario.getUsuarioList().add(usuario);
-                    usuarioList1NewUsuario = em.merge(usuarioList1NewUsuario);
-                }
-            }
             for (Miembro miembroListNewMiembro : miembroListNew) {
                 if (!miembroListOld.contains(miembroListNewMiembro)) {
                     Usuario oldUsuarioNickNameOfMiembroListNewMiembro = miembroListNewMiembro.getUsuarioNickName();
@@ -183,7 +115,7 @@ public class UsuarioJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                Short id = usuario.getNickName();
+                String id = usuario.getNickName();
                 if (findUsuario(id) == null) {
                     throw new NonexistentEntityException("The usuario with id " + id + " no longer exists.");
                 }
@@ -196,7 +128,7 @@ public class UsuarioJpaController implements Serializable {
         }
     }
 
-    public void destroy(Short id) throws IllegalOrphanException, NonexistentEntityException {
+    public void destroy(String id) throws IllegalOrphanException, NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -218,16 +150,6 @@ public class UsuarioJpaController implements Serializable {
             }
             if (illegalOrphanMessages != null) {
                 throw new IllegalOrphanException(illegalOrphanMessages);
-            }
-            List<Usuario> usuarioList = usuario.getUsuarioList();
-            for (Usuario usuarioListUsuario : usuarioList) {
-                usuarioListUsuario.getUsuarioList().remove(usuario);
-                usuarioListUsuario = em.merge(usuarioListUsuario);
-            }
-            List<Usuario> usuarioList1 = usuario.getUsuarioList1();
-            for (Usuario usuarioList1Usuario : usuarioList1) {
-                usuarioList1Usuario.getUsuarioList().remove(usuario);
-                usuarioList1Usuario = em.merge(usuarioList1Usuario);
             }
             em.remove(usuario);
             em.getTransaction().commit();
@@ -262,7 +184,7 @@ public class UsuarioJpaController implements Serializable {
         }
     }
 
-    public Usuario findUsuario(Short id) {
+    public Usuario findUsuario(String id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Usuario.class, id);
