@@ -11,6 +11,7 @@
     <class>entities.Grupo</class>
     <class>entities.Miembro</class>
     <class>entities.Miembroxfactura</class>
+    <class>entities.Contactos</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@orion.javeriana.edu.co:1521:PUJDISOR"/>
       <property name="javax.persistence.jdbc.user" value="is102303"/>

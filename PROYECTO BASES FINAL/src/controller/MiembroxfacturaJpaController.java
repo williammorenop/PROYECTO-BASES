@@ -39,8 +39,8 @@ public class MiembroxfacturaJpaController implements Serializable {
         if (miembroxfactura.getMiembroxfacturaPK() == null) {
             miembroxfactura.setMiembroxfacturaPK(new MiembroxfacturaPK());
         }
-        miembroxfactura.getMiembroxfacturaPK().setFacturaFacturaId(miembroxfactura.getFactura().getFacturaId());
         miembroxfactura.getMiembroxfacturaPK().setMiembroMiembroId(miembroxfactura.getMiembro().getMiembroId());
+        miembroxfactura.getMiembroxfacturaPK().setFacturaFacturaId(miembroxfactura.getFactura().getFacturaId());
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -78,8 +78,8 @@ public class MiembroxfacturaJpaController implements Serializable {
     }
 
     public void edit(Miembroxfactura miembroxfactura) throws NonexistentEntityException, Exception {
-        miembroxfactura.getMiembroxfacturaPK().setFacturaFacturaId(miembroxfactura.getFactura().getFacturaId());
         miembroxfactura.getMiembroxfacturaPK().setMiembroMiembroId(miembroxfactura.getMiembro().getMiembroId());
+        miembroxfactura.getMiembroxfacturaPK().setFacturaFacturaId(miembroxfactura.getFactura().getFacturaId());
         EntityManager em = null;
         try {
             em = getEntityManager();

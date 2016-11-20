@@ -12,9 +12,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -44,7 +41,7 @@ public class Usuario implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "NICK_NAME")
-    private Short nickName;
+    private String nickName;
     @Basic(optional = false)
     @Column(name = "NOMBRE")
     private String nombre;
@@ -56,37 +53,30 @@ public class Usuario implements Serializable {
     private String usuarioPaypal;
     @Basic(optional = false)
     @Column(name = "CLAVE")
-    private Character clave;
+    private String clave;
     @Column(name = "CLAVE1")
-    private Character clave1;
-    @JoinTable(name = "CONTACTOS", joinColumns = {
-        @JoinColumn(name = "USUARIO_NICK_NAME", referencedColumnName = "NICK_NAME")}, inverseJoinColumns = {
-        @JoinColumn(name = "USUARIO_NICK_NAME1", referencedColumnName = "NICK_NAME")})
-    @ManyToMany
-    private List<Usuario> usuarioList;
-    @ManyToMany(mappedBy = "usuarioList")
-    private List<Usuario> usuarioList1;
+    private String clave1;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuarioNickName")
     private List<Miembro> miembroList;
 
     public Usuario() {
     }
 
-    public Usuario(Short nickName) {
+    public Usuario(String nickName) {
         this.nickName = nickName;
     }
 
-    public Usuario(Short nickName, String nombre, Character clave) {
+    public Usuario(String nickName, String nombre, String clave) {
         this.nickName = nickName;
         this.nombre = nombre;
         this.clave = clave;
     }
 
-    public Short getNickName() {
+    public String getNickName() {
         return nickName;
     }
 
-    public void setNickName(Short nickName) {
+    public void setNickName(String nickName) {
         this.nickName = nickName;
     }
 
@@ -122,38 +112,20 @@ public class Usuario implements Serializable {
         this.usuarioPaypal = usuarioPaypal;
     }
 
-    public Character getClave() {
+    public String getClave() {
         return clave;
     }
 
-    public void setClave(Character clave) {
+    public void setClave(String clave) {
         this.clave = clave;
     }
 
-    public Character getClave1() {
+    public String getClave1() {
         return clave1;
     }
 
-    public void setClave1(Character clave1) {
+    public void setClave1(String clave1) {
         this.clave1 = clave1;
-    }
-
-    @XmlTransient
-    public List<Usuario> getUsuarioList() {
-        return usuarioList;
-    }
-
-    public void setUsuarioList(List<Usuario> usuarioList) {
-        this.usuarioList = usuarioList;
-    }
-
-    @XmlTransient
-    public List<Usuario> getUsuarioList1() {
-        return usuarioList1;
-    }
-
-    public void setUsuarioList1(List<Usuario> usuarioList1) {
-        this.usuarioList1 = usuarioList1;
     }
 
     @XmlTransient
