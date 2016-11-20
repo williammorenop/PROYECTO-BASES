@@ -2,8 +2,7 @@ package interfaz;
 
 
 
-import static GUI.PROYECTOBASESFINAL.controlador;
-import controllers.UsuarioJpaController;
+import controller.UsuarioJpaController;
 import entities.Usuario;
 import javax.swing.JFrame;
 import javax.swing.JTextField;

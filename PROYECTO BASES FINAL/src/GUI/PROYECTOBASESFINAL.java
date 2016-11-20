@@ -5,7 +5,7 @@
  */
 package GUI;
 
-import controllers.UsuarioJpaController;
+import controller.UsuarioJpaController;
 import entities.Usuario;
 import java.io.BufferedReader;
 import java.io.IOException;
