@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="entrega_3PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>entities.Factura</class>
+    <class>entities.Historial</class>
+    <class>entities.Usuario</class>
+    <class>entities.Transaccion</class>
+    <class>entities.Miembroxtransaccion</class>
+    <class>entities.Rol</class>
+    <class>entities.Grupo</class>
+    <class>entities.Miembro</class>
+    <class>entities.Miembroxfactura</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@orion.javeriana.edu.co:1521:PUJDISOR"/>
+      <property name="javax.persistence.jdbc.user" value="is102303"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.password" value="f1YC7hC2RR"/>
+    </properties>
+  </persistence-unit>
+</persistence>
