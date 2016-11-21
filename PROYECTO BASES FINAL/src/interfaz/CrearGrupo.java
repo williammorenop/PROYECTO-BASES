@@ -26,7 +26,7 @@ public class CrearGrupo extends javax.swing.JFrame {
 	private String[] nombresContacts={
 			"Nombre","Email"
 			};
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("PROYECTO_BASES_FINALPU");
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("entrega_3PU");
         UsuarioJpaController controlador = new UsuarioJpaController(emf);
         /**
      * Creates new form CrearGrupo

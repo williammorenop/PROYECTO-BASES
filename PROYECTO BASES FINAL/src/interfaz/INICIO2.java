@@ -72,16 +72,18 @@ public class INICIO2 extends JFrame {
                         @Override
 			public void actionPerformed(ActionEvent e) {
 				
-                            
-                                Usuario hola=new Usuario("pirdo", "hater", "brayan");
-                                 EntityManagerFactory emf = Persistence.createEntityManagerFactory("entrega_3PU");
-        UsuarioJpaController controlador = new UsuarioJpaController(emf);
-        
-                            try {
-                                controlador.create(hola);
-                            } catch (Exception ex) {
-                                Logger.getLogger(INICIO2.class.getName()).log(Level.SEVERE, null, ex);
-                            }
+                      CrearGrupo grupo = new CrearGrupo("yolo");
+    //                            Usuario hola=new Usuario("pero", "hater", "wrayan");
+      ////                          Usuario hola1=new Usuario("riro", "heater", "wwqwrayan");
+       //                          EntityManagerFactory emf = Persistence.createEntityManagerFactory("entrega_3PU");
+        //UsuarioJpaController controlador = new UsuarioJpaController(emf);
+        //
+          //                  try {
+            //                    controlador.create(hola);
+              //                  controlador.create(hola1);
+                //            } catch (Exception ex) {
+                  //              Logger.getLogger(INICIO2.class.getName()).log(Level.SEVERE, null, ex);
+                    //        }
                                 
                                 
 				JOptionPane.showMessageDialog(null,"PROXIMAMENTE","Registrarse",JOptionPane.INFORMATION_MESSAGE);
