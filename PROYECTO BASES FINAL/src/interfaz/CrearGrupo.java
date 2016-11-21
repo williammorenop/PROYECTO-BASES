@@ -5,7 +5,8 @@
  */
 package interfaz;
 
-import controller.ContactosJpaController;
+
+import controller.UsuarioJpaController;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -26,7 +27,7 @@ public class CrearGrupo extends javax.swing.JFrame {
 			"Nombre","Email"
 			};
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("PROYECTO_BASES_FINALPU");
-        ContactosJpaController controlador = new ContactosJpaController(emf);
+        UsuarioJpaController controlador = new UsuarioJpaController(emf);
         /**
      * Creates new form CrearGrupo
      */
@@ -35,10 +36,6 @@ public class CrearGrupo extends javax.swing.JFrame {
         this.jTable1 = this.crearTablaInfo(user);
     }
 
-     public CrearGrupo( String user , short grupo ) {
-        initComponents();
-        this.jTable1 = this.crearTablaInfo(user);
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -171,15 +168,6 @@ public class CrearGrupo extends javax.swing.JFrame {
 		if(this.columNameContacts==null)
 			this.columNameContacts=new Vector<>(Arrays.asList(this.nombresContacts));
                 List< Objects > temp =  controlador.getContactos(user) ;
-                this.dataContacts = new Vector< Object >();
-                for( Object o : temp )
-                    this.dataContacts.add(o);
-		return new JTable(this.dataContacts,this.columNameContacts);
-	}
-     private JTable crearTablaInfo( String user , short grupo ) {
-		if(this.columNameContacts==null)
-			this.columNameContacts=new Vector<>(Arrays.asList(this.nombresContacts));
-              //  List< Objects > temp =  controlador.getContactos(user,grupo) ;
                 this.dataContacts = new Vector< Object >();
                 for( Object o : temp )
                     this.dataContacts.add(o);
