@@ -2,9 +2,10 @@
 # Created by https://www.gitignore.io/api/netbeans
 
 ### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
+PROYECTO BASES FINAL/nbproject/private/*
+PROYECTO BASES FINAL/build/
+PROYECTO BASES FINAL/nbbuild/
+PROYECTO BASES FINAL/dist/
+PROYECTO BASES FINAL/nbdist/
 .nb-gradle/
+/PROYECTO BASES FINAL/JavaApplication1/nbproject/private/
