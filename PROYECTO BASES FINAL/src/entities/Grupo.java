@@ -107,7 +107,7 @@ public class Grupo implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Grupo[ grupoId=" + grupoId + " ]";
+        return "GUI.Grupo[ grupoId=" + grupoId + " ]";
     }
     
 }

@@ -5,6 +5,7 @@
  */
 package entities;
 
+import entities.Miembro;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -12,6 +13,9 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -56,6 +60,13 @@ public class Usuario implements Serializable {
     private String clave;
     @Column(name = "CLAVE1")
     private String clave1;
+    @JoinTable(name = "CONTACTOS", joinColumns = {
+        @JoinColumn(name = "USUARIO_NICK_NAME", referencedColumnName = "NICK_NAME")}, inverseJoinColumns = {
+        @JoinColumn(name = "USUARIO_NICK_NAME1", referencedColumnName = "NICK_NAME")})
+    @ManyToMany
+    private List<Usuario> usuarioList;
+    @ManyToMany(mappedBy = "usuarioList")
+    private List<Usuario> usuarioList1;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuarioNickName")
     private List<Miembro> miembroList;
 
@@ -129,6 +140,24 @@ public class Usuario implements Serializable {
     }
 
     @XmlTransient
+    public List<Usuario> getUsuarioList() {
+        return usuarioList;
+    }
+
+    public void setUsuarioList(List<Usuario> usuarioList) {
+        this.usuarioList = usuarioList;
+    }
+
+    @XmlTransient
+    public List<Usuario> getUsuarioList1() {
+        return usuarioList1;
+    }
+
+    public void setUsuarioList1(List<Usuario> usuarioList1) {
+        this.usuarioList1 = usuarioList1;
+    }
+
+    @XmlTransient
     public List<Miembro> getMiembroList() {
         return miembroList;
     }
@@ -159,7 +188,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Usuario[ nickName=" + nickName + " ]";
+        return "GUI.Usuario[ nickName=" + nickName + " ]";
     }
     
 }

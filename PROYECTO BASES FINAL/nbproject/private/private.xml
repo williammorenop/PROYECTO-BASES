@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/home/johan/Documents/Bases/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/entities/Contactos.java</file>
             <file>file:/home/johan/Documents/Bases/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/controller/ContactosJpaController.java</file>
@@ -10,5 +11,8 @@
             <file>file:/home/johan/Documents/Bases/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/controller/UsuarioJpaController.java</file>
             <file>file:/home/johan/Documents/Bases/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/META-INF/persistence.xml</file>
         </group>
+=======
+        <group/>
+>>>>>>> 7404e319806546adfcae0a3faf5491b002c3feee
     </open-files>
 </project-private>
