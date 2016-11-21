@@ -3,13 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/johan/Documents/Bases/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/entrega_3/Entrega_3.java</file>
-            <file>file:/home/johan/Documents/Bases/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/interfaz/Bill.java</file>
-            <file>file:/home/johan/Documents/Bases/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/interfaz/VistaGrupo.java</file>
-            <file>file:/home/johan/Documents/Bases/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/META-INF/persistence.xml</file>
-            <file>file:/home/johan/Documents/Bases/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/interfaz/INICIO2.java</file>
-            <file>file:/home/johan/Documents/Bases/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/controller/UsuarioJpaController.java</file>
-            <file>file:/home/johan/Documents/Bases/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/interfaz/CrearGrupo.java</file>
+
+            <file>file:/Users/johanmurillo/Desktop/BASES%20BASES%20JIJIJAJA/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/controller/UsuarioJpaController.java</file>
+            <file>file:/Users/johanmurillo/Desktop/BASES%20BASES%20JIJIJAJA/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/GUI/PROYECTOBASESFINAL.java</file>
+            <file>file:/Users/johanmurillo/Desktop/BASES%20BASES%20JIJIJAJA/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/interfaz/CrearGrupo.java</file>
+            <file>file:/Users/johanmurillo/Desktop/BASES%20BASES%20JIJIJAJA/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/entities/Usuario.java</file>
+            <file>file:/Users/johanmurillo/Desktop/BASES%20BASES%20JIJIJAJA/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/interfaz/menu2.java</file>
+            <file>file:/Users/johanmurillo/Desktop/BASES%20BASES%20JIJIJAJA/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/META-INF/persistence.xml</file>
+            <file>file:/Users/johanmurillo/Desktop/BASES%20BASES%20JIJIJAJA/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/interfaz/ventanalogin.java</file>
+            <file>file:/Users/johanmurillo/Desktop/BASES%20BASES%20JIJIJAJA/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/interfaz/menu.java</file>
+            <file>file:/Users/johanmurillo/Desktop/BASES%20BASES%20JIJIJAJA/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/interfaz/Bill.java</file>
+            <file>file:/Users/johanmurillo/Desktop/BASES%20BASES%20JIJIJAJA/PROYECTO-BASES/PROYECTO%20BASES%20FINAL/src/interfaz/INICIO2.java</file>
+
         </group>
     </open-files>
 </project-private>
