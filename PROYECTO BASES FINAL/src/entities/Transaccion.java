@@ -5,6 +5,7 @@
  */
 package entities;
 
+import entities.Miembroxtransaccion;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -183,7 +184,7 @@ public class Transaccion implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Transaccion[ transaccionId=" + transaccionId + " ]";
+        return "GUI.Transaccion[ transaccionId=" + transaccionId + " ]";
     }
     
 }

@@ -140,7 +140,7 @@ public class Miembroxtransaccion implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Miembroxtransaccion[ miembroxtransaccionPK=" + miembroxtransaccionPK + " ]";
+        return "GUI.Miembroxtransaccion[ miembroxtransaccionPK=" + miembroxtransaccionPK + " ]";
     }
     
 }

@@ -74,7 +74,7 @@ public class MiembroxfacturaPK implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.MiembroxfacturaPK[ miembroMiembroId=" + miembroMiembroId + ", facturaFacturaId=" + facturaFacturaId + " ]";
+        return "GUI.MiembroxfacturaPK[ miembroMiembroId=" + miembroMiembroId + ", facturaFacturaId=" + facturaFacturaId + " ]";
     }
     
 }

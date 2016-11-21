@@ -182,7 +182,7 @@ public class Miembro implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Miembro[ miembroId=" + miembroId + " ]";
+        return "GUI.Miembro[ miembroId=" + miembroId + " ]";
     }
     
 }

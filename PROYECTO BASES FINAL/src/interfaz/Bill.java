@@ -18,7 +18,7 @@ public class BILL extends javax.swing.JFrame {
     
     public void llamado_tabla(){
         
-        DefaultTableModel model= (DefaultTableModel) Tabla
+       // DefaultTableModel model= (DefaultTableModel) Tabla
     }
     
     public static int valor;

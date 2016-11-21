@@ -5,6 +5,7 @@
  */
 package entities;
 
+import entities.Miembro;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -187,7 +188,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Usuario[ nickName=" + nickName + " ]";
+        return "GUI.Usuario[ nickName=" + nickName + " ]";
     }
     
 }
