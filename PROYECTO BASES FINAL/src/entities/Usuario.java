@@ -12,6 +12,9 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -56,6 +59,13 @@ public class Usuario implements Serializable {
     private String clave;
     @Column(name = "CLAVE1")
     private String clave1;
+    @JoinTable(name = "CONTACTOS", joinColumns = {
+        @JoinColumn(name = "USUARIO_NICK_NAME", referencedColumnName = "NICK_NAME")}, inverseJoinColumns = {
+        @JoinColumn(name = "USUARIO_NICK_NAME1", referencedColumnName = "NICK_NAME")})
+    @ManyToMany
+    private List<Usuario> usuarioList;
+    @ManyToMany(mappedBy = "usuarioList")
+    private List<Usuario> usuarioList1;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuarioNickName")
     private List<Miembro> miembroList;
 
@@ -126,6 +136,24 @@ public class Usuario implements Serializable {
 
     public void setClave1(String clave1) {
         this.clave1 = clave1;
+    }
+
+    @XmlTransient
+    public List<Usuario> getUsuarioList() {
+        return usuarioList;
+    }
+
+    public void setUsuarioList(List<Usuario> usuarioList) {
+        this.usuarioList = usuarioList;
+    }
+
+    @XmlTransient
+    public List<Usuario> getUsuarioList1() {
+        return usuarioList1;
+    }
+
+    public void setUsuarioList1(List<Usuario> usuarioList1) {
+        this.usuarioList1 = usuarioList1;
     }
 
     @XmlTransient

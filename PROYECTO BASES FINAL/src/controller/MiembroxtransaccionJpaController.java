@@ -39,8 +39,8 @@ public class MiembroxtransaccionJpaController implements Serializable {
         if (miembroxtransaccion.getMiembroxtransaccionPK() == null) {
             miembroxtransaccion.setMiembroxtransaccionPK(new MiembroxtransaccionPK());
         }
-        miembroxtransaccion.getMiembroxtransaccionPK().setMiembroMiembroId(miembroxtransaccion.getMiembro().getMiembroId());
         miembroxtransaccion.getMiembroxtransaccionPK().setTransaccionTransaccionId(miembroxtransaccion.getTransaccion().getTransaccionId());
+        miembroxtransaccion.getMiembroxtransaccionPK().setMiembroMiembroId(miembroxtransaccion.getMiembro().getMiembroId());
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -78,8 +78,8 @@ public class MiembroxtransaccionJpaController implements Serializable {
     }
 
     public void edit(Miembroxtransaccion miembroxtransaccion) throws NonexistentEntityException, Exception {
-        miembroxtransaccion.getMiembroxtransaccionPK().setMiembroMiembroId(miembroxtransaccion.getMiembro().getMiembroId());
         miembroxtransaccion.getMiembroxtransaccionPK().setTransaccionTransaccionId(miembroxtransaccion.getTransaccion().getTransaccionId());
+        miembroxtransaccion.getMiembroxtransaccionPK().setMiembroMiembroId(miembroxtransaccion.getMiembro().getMiembroId());
         EntityManager em = null;
         try {
             em = getEntityManager();
