@@ -11,6 +11,7 @@ import entities.Contactos;
 import entities.ContactosPK;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
@@ -143,6 +144,17 @@ public class ContactosJpaController implements Serializable {
         } finally {
             em.close();
         }
+    }
+    
+    public List< Objects > getContactos( String user )
+    {
+        EntityManager em = getEntityManager();
+        Query query;
+        query = em.createNamedQuery("SELECT * FROM CONTACTOS INNER JOIN USUARIO "
+                + " ON CONTACTOS.Usuario_Nick_name1 = USUARIO.NICK_NAME"
+                + " WHERE CONTACTOS.Usuario_Nick_name = ? ");
+        query.setParameter( 1 , user );
+        return query.getResultList();
     }
     
 }
