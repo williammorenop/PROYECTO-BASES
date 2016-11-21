@@ -189,7 +189,9 @@ public class UsuarioJpaController implements Serializable {
         try {
             return em.find(Usuario.class, id);
         } finally {
-            em.close();
+            
+       em.close();
+      
         }
     }
 
