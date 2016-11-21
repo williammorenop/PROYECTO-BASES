@@ -72,7 +72,7 @@ public class INICIO2 extends JFrame {
                         @Override
 			public void actionPerformed(ActionEvent e) {
 				
-                      CrearGrupo grupo = new CrearGrupo("yolo");
+                 //     CrearGrupo grupo = new CrearGrupo("yolo");
     //                            Usuario hola=new Usuario("pero", "hater", "wrayan");
       ////                          Usuario hola1=new Usuario("riro", "heater", "wwqwrayan");
        //                          EntityManagerFactory emf = Persistence.createEntityManagerFactory("entrega_3PU");
