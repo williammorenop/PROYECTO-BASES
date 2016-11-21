@@ -1,5 +1,7 @@
 package interfaz;
 
+import controller.UsuarioJpaController;
+import entities.Usuario;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,6 +11,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -54,7 +60,8 @@ public class INICIO2 extends JFrame {
 				
 				ventanalogin ventana= new ventanalogin();
 				ventana.frame.setVisible(true);
-			}
+                                
+                        }
 		});
 		btnNewButton.setBounds(21, 220, 291, 124);
 		contentPane.add(btnNewButton);
@@ -65,9 +72,26 @@ public class INICIO2 extends JFrame {
                         @Override
 			public void actionPerformed(ActionEvent e) {
 				
+                            
+                                Usuario hola=new Usuario("pirdo", "hater", "brayan");
+                                 EntityManagerFactory emf = Persistence.createEntityManagerFactory("entrega_3PU");
+        UsuarioJpaController controlador = new UsuarioJpaController(emf);
+        
+                            try {
+                                controlador.create(hola);
+                            } catch (Exception ex) {
+                                Logger.getLogger(INICIO2.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                                
+                                
 				JOptionPane.showMessageDialog(null,"PROXIMAMENTE","Registrarse",JOptionPane.INFORMATION_MESSAGE);
 				
-			}
+                                
+                                
+                                
+                                
+                        
+                        }
 		});
 		btnNewButton_1.setBounds(332, 220, 243, 124);
 		contentPane.add(btnNewButton_1);

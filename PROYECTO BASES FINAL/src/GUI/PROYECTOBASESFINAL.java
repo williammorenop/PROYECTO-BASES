@@ -27,7 +27,7 @@ public class PROYECTOBASESFINAL {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PROYECTO_BASES_FINALPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("entrega_3PU");
         UsuarioJpaController controlador = new UsuarioJpaController(emf);
         
         String nickname = null,Password = null;
@@ -71,8 +71,8 @@ public class PROYECTOBASESFINAL {
         List<Usuario> findUsuarioEntities;
     findUsuarioEntities = controlador.findUsuarioEntities();
         for (Usuario usuario : findUsuarioEntities) {
-            System.out.print(usuario.getNombre());
-            System.out.print("\t"+usuario.getUsuarioPaypal()+"\n");
+            System.out.print(usuario.getNickName());
+           // System.out.print("\t"+usuario.getUsuarioPaypal()+"\n");
         }
            
     }
