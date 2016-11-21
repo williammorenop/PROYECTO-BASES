@@ -291,7 +291,7 @@ public class UsuarioJpaController implements Serializable {
     {
         EntityManager em = getEntityManager();
         Query query;
-        query = em.createNamedQuery("SELECT USUARIO.NICK_NAME,USUARIO.Email FROM CONTACTOS INNER JOIN USUARIO "
+        query = em.createNativeQuery("SELECT USUARIO.NICK_NAME,USUARIO.Email FROM CONTACTOS INNER JOIN USUARIO "
                 + " ON CONTACTOS.Usuario_Nick_name1 = USUARIO.NICK_NAME"
                 + " WHERE CONTACTOS.Usuario_Nick_name = ? ");
         query.setParameter( 1 , user );

@@ -5,7 +5,6 @@
  */
 package entities;
 
-import entities.Historial;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -22,7 +21,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author JAIRINHO
+ * @author johan
  */
 @Entity
 @Table(name = "ROL")
@@ -103,7 +102,7 @@ public class Rol implements Serializable {
 
     @Override
     public String toString() {
-        return "GUI.Rol[ rolId=" + rolId + " ]";
+        return "entities.Rol[ rolId=" + rolId + " ]";
     }
     
 }

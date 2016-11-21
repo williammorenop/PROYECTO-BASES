@@ -5,7 +5,6 @@
  */
 package entities;
 
-import entities.Miembro;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -25,7 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author JAIRINHO
+ * @author johan
  */
 @Entity
 @Table(name = "USUARIO")
@@ -188,7 +187,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "GUI.Usuario[ nickName=" + nickName + " ]";
+        return "entities.Usuario[ nickName=" + nickName + " ]";
     }
     
 }

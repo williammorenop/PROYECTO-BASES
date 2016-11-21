@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author JAIRINHO
+ * @author johan
  */
 @Entity
 @Table(name = "MIEMBRO")
@@ -182,7 +182,7 @@ public class Miembro implements Serializable {
 
     @Override
     public String toString() {
-        return "GUI.Miembro[ miembroId=" + miembroId + " ]";
+        return "entities.Miembro[ miembroId=" + miembroId + " ]";
     }
     
 }

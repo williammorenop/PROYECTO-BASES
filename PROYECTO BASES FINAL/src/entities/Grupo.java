@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author JAIRINHO
+ * @author johan
  */
 @Entity
 @Table(name = "GRUPO")
@@ -107,7 +107,7 @@ public class Grupo implements Serializable {
 
     @Override
     public String toString() {
-        return "GUI.Grupo[ grupoId=" + grupoId + " ]";
+        return "entities.Grupo[ grupoId=" + grupoId + " ]";
     }
     
 }

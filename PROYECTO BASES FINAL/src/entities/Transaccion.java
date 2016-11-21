@@ -5,7 +5,6 @@
  */
 package entities;
 
-import entities.Miembroxtransaccion;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -25,7 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author JAIRINHO
+ * @author johan
  */
 @Entity
 @Table(name = "TRANSACCION")
@@ -184,7 +183,7 @@ public class Transaccion implements Serializable {
 
     @Override
     public String toString() {
-        return "GUI.Transaccion[ transaccionId=" + transaccionId + " ]";
+        return "entities.Transaccion[ transaccionId=" + transaccionId + " ]";
     }
     
 }

@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author JAIRINHO
+ * @author johan
  */
 @Embeddable
 public class HistorialPK implements Serializable {
@@ -110,7 +110,7 @@ public class HistorialPK implements Serializable {
 
     @Override
     public String toString() {
-        return "GUI.HistorialPK[ fecha=" + fecha + ", miembroMiembroId=" + miembroMiembroId + ", grupoGrupoId=" + grupoGrupoId + ", rolRolId=" + rolRolId + " ]";
+        return "entities.HistorialPK[ fecha=" + fecha + ", miembroMiembroId=" + miembroMiembroId + ", grupoGrupoId=" + grupoGrupoId + ", rolRolId=" + rolRolId + " ]";
     }
     
 }

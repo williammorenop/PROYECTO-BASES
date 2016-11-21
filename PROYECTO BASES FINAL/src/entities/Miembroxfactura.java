@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author JAIRINHO
+ * @author johan
  */
 @Entity
 @Table(name = "MIEMBROXFACTURA")
@@ -108,7 +108,7 @@ public class Miembroxfactura implements Serializable {
 
     @Override
     public String toString() {
-        return "GUI.Miembroxfactura[ miembroxfacturaPK=" + miembroxfacturaPK + " ]";
+        return "entities.Miembroxfactura[ miembroxfacturaPK=" + miembroxfacturaPK + " ]";
     }
     
 }

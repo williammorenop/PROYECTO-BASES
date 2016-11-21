@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author JAIRINHO
+ * @author johan
  */
 @Entity
 @Table(name = "FACTURA")
@@ -215,7 +215,7 @@ public class Factura implements Serializable {
 
     @Override
     public String toString() {
-        return "GUI.Factura[ facturaId=" + facturaId + " ]";
+        return "entities.Factura[ facturaId=" + facturaId + " ]";
     }
     
 }
