@@ -40,9 +40,9 @@ public class HistorialJpaController implements Serializable {
         if (historial.getHistorialPK() == null) {
             historial.setHistorialPK(new HistorialPK());
         }
-        historial.getHistorialPK().setRolRolId(historial.getRol().getRolId());
         historial.getHistorialPK().setMiembroMiembroId(historial.getMiembro().getMiembroId());
         historial.getHistorialPK().setGrupoGrupoId(historial.getGrupo().getGrupoId());
+        historial.getHistorialPK().setRolRolId(historial.getRol().getRolId());
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -89,9 +89,9 @@ public class HistorialJpaController implements Serializable {
     }
 
     public void edit(Historial historial) throws NonexistentEntityException, Exception {
-        historial.getHistorialPK().setRolRolId(historial.getRol().getRolId());
         historial.getHistorialPK().setMiembroMiembroId(historial.getMiembro().getMiembroId());
         historial.getHistorialPK().setGrupoGrupoId(historial.getGrupo().getGrupoId());
+        historial.getHistorialPK().setRolRolId(historial.getRol().getRolId());
         EntityManager em = null;
         try {
             em = getEntityManager();
