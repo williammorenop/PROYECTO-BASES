@@ -73,7 +73,7 @@ public class INICIO2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
                             
-                                Usuario hola=new Usuario("pirobo", "hater", "brayan");
+                                Usuario hola=new Usuario("pirdo", "hater", "brayan");
                                  EntityManagerFactory emf = Persistence.createEntityManagerFactory("entrega_3PU");
         UsuarioJpaController controlador = new UsuarioJpaController(emf);
         
