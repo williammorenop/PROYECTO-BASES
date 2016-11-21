@@ -126,8 +126,8 @@ ALTER TABLE Usuario ADD CONSTRAINT Usuario_PK PRIMARY KEY ( Nick_name ) ;
 
 CREATE TABLE contactos
   (
-    Usuario_Nick_name  NUMBER (3) NOT NULL ,
-    Usuario_Nick_name1 NUMBER (3) NOT NULL
+    Usuario_Nick_name NVARCHAR2 (50) NOT NULL ,
+    Usuario_Nick_name1 NVARCHAR2 (50) NOT NULL
   ) ;
 ALTER TABLE contactos ADD CONSTRAINT contactos_PK PRIMARY KEY ( Usuario_Nick_name, Usuario_Nick_name1 ) ;
 
@@ -151,3 +151,7 @@ ALTER TABLE Historial ADD CONSTRAINT Historial_Miembro_FK FOREIGN KEY ( Miembro_
 ALTER TABLE Historial ADD CONSTRAINT Historial_Rol_FK FOREIGN KEY ( Rol_Rol_id ) REFERENCES Rol ( Rol_id ) ;
 
 ALTER TABLE Miembro ADD CONSTRAINT Miembro_Usuario_FK FOREIGN KEY ( Usuario_Nick_name ) REFERENCES Usuario ( Nick_name ) ;
+
+
+
+
