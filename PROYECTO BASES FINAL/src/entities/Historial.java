@@ -109,7 +109,7 @@ public class Historial implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Historial[ historialPK=" + historialPK + " ]";
+        return "GUI.Historial[ historialPK=" + historialPK + " ]";
     }
     
 }

@@ -215,7 +215,7 @@ public class Factura implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Factura[ facturaId=" + facturaId + " ]";
+        return "GUI.Factura[ facturaId=" + facturaId + " ]";
     }
     
 }

@@ -5,6 +5,7 @@
  */
 package entities;
 
+import entities.Historial;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -102,7 +103,7 @@ public class Rol implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Rol[ rolId=" + rolId + " ]";
+        return "GUI.Rol[ rolId=" + rolId + " ]";
     }
     
 }

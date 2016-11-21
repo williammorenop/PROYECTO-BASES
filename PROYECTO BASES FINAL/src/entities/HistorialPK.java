@@ -110,7 +110,7 @@ public class HistorialPK implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.HistorialPK[ fecha=" + fecha + ", miembroMiembroId=" + miembroMiembroId + ", grupoGrupoId=" + grupoGrupoId + ", rolRolId=" + rolRolId + " ]";
+        return "GUI.HistorialPK[ fecha=" + fecha + ", miembroMiembroId=" + miembroMiembroId + ", grupoGrupoId=" + grupoGrupoId + ", rolRolId=" + rolRolId + " ]";
     }
     
 }

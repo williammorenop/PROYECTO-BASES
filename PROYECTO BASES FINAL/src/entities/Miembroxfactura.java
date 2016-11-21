@@ -108,7 +108,7 @@ public class Miembroxfactura implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Miembroxfactura[ miembroxfacturaPK=" + miembroxfacturaPK + " ]";
+        return "GUI.Miembroxfactura[ miembroxfacturaPK=" + miembroxfacturaPK + " ]";
     }
     
 }
