@@ -79,7 +79,7 @@ public class ventanalogin {
 			
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
-                           EntityManagerFactory emf = Persistence.createEntityManagerFactory("PROYECTO_BASES_FINALPU");
+                           EntityManagerFactory emf = Persistence.createEntityManagerFactory("entrega_3PU");
         UsuarioJpaController controlador = new UsuarioJpaController(emf);
         
                             System.out.println(textField.getText());
@@ -120,22 +120,24 @@ public class ventanalogin {
         
                public static String Login(String nickname,String Password,UsuarioJpaController controlador)
     {
-        String retorno="Error en la contraseña o en el nombre de usuario.\n\t\t Intente de nuevo\n";
-        List<Usuario> findUsuarioEntities;
-    findUsuarioEntities = controlador.findUsuarioEntities();
+        String retorno;
+            retorno = "Error en la contraseña o en el nombre de usuario.\n\t\t Intente de nuevo\n";
+        
+    
+           Usuario usuario=null;
+                  usuario= controlador.findUsuario(nickname);
 
-     for (Usuario usuario : findUsuarioEntities) {
-           // System.out.println(usuario.getNombre().trim()+"--->");
-            if(usuario.getNombre().trim().compareTo(nickname.trim())==0)
+     
+            if(usuario!=null)
             {
                 //System.out.println("aaaa1");
-                if(usuario.getUsuarioPaypal().compareTo(Password)==0)               //CAMBIAR PoR CLAVE
+                if(usuario.getClave().compareTo(Password)==0)               //CAMBIAR PoR CLAVE
                 {
                     //System.out.println("aaaa2");
                     return "EXITO!!";
                 }
             }
-         }
+         
      return retorno;
     }
 }
