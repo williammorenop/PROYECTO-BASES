@@ -36,6 +36,27 @@ public class UsuarioJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
+    ////////////////////////////////////////
+    public List<EditorialLibros> editorialesLibros() {
+ EntityManager em = getEntityManager();
+ Query query = em.createNativeQuery("SELECT E.IDEDITORIAL, E.NOMBRE, "
+ + "(select count(*) from libro l where l.ideditorial = e.ideditorial) "
+ + "FROM EDITORIAL E");
+ List<Object[]> results = query.getResultList();
+ List<EditorialLibros> lista = new ArrayList<>();
+ for (Object[] row : results) {
+ BigDecimal id = (BigDecimal) row[0];
+ String nombre = (String) row[1];
+ BigDecimal cuentaLibros = (BigDecimal) row[2];
+ EditorialLibros el = new EditorialLibros();
+ el.setId(id);el.setNombre(nombre);el.setCuentaLibros(cuentaLibros);
+ lista.add(el);
+ }
+ return lista;
+ }
+    
+    
+    ////////////////////////////////////////
     public void create(Usuario usuario) throws PreexistingEntityException, Exception {
         if (usuario.getUsuarioList() == null) {
             usuario.setUsuarioList(new ArrayList<Usuario>());
